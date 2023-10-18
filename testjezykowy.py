@@ -87,16 +87,12 @@ def latwy():
     print(odp_f_strip)
     image_path = f"Latwy_Zdjecia/{zapytanie_wynik_strip}.gif"
 
-    try:
-        image = Image.open(image_path)
-        photo = ImageTk.PhotoImage(image)
-        global obrazek_label
-        obrazek_label = tk.Label(root, image=photo, width=400, height=400)
-        obrazek_label.image = photo  # Keeping a reference
-        obrazek_label.pack()
-
-    except FileNotFoundError:
-        print("Image not found.")
+    image = Image.open(image_path)
+    photo = ImageTk.PhotoImage(image)
+    global obrazek_label
+    obrazek_label = tk.Label(root, image=photo, width=400, height=400)
+    obrazek_label.image = photo  # Keeping a reference
+    obrazek_label.pack()
     global przycisk1
     przycisk1 = tk.Button(root, textvariable=latwy_guzik1,command=lambda: (sprawdzenie_dobrej_odpowiedzi(odp_a_strip)))
     przycisk1.pack()
