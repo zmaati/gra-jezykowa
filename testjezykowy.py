@@ -93,24 +93,24 @@ def latwy():
     obrazek_label = tk.Label(root, image=photo, width=400, height=400)
     obrazek_label.image = photo  # Keeping a reference
     obrazek_label.pack()
-    global przycisk1
-    przycisk1 = tk.Button(root, textvariable=latwy_guzik1,command=lambda: (sprawdzenie_dobrej_odpowiedzi(odp_a_strip)))
-    przycisk1.pack()
-    global przycisk2
-    przycisk2 = tk.Button(root, textvariable=latwy_guzik2, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_b_strip))
-    przycisk2.pack()
-    global przycisk3
-    przycisk3 = tk.Button(root, textvariable=latwy_guzik3, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_c_strip))
-    przycisk3.pack()
-    global przycisk4
-    przycisk4 = tk.Button(root, textvariable=latwy_guzik4, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_d_strip))
-    przycisk4.pack()
-    global przycisk5
-    przycisk5 = tk.Button(root, textvariable=latwy_guzik5, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_e_strip))
-    przycisk5.pack()
-    global przycisk6
-    przycisk6 = tk.Button(root, textvariable=latwy_guzik6, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_f_strip))
-    przycisk6.pack()
+    global przycisk1_latwy
+    przycisk1_latwy = tk.Button(root, textvariable=latwy_guzik1,command=lambda: (sprawdzenie_dobrej_odpowiedzi(odp_a_strip, przycisk1_latwy)))
+    przycisk1_latwy.pack()
+    global przycisk2_latwy
+    przycisk2_latwy = tk.Button(root, textvariable=latwy_guzik2, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_b_strip, przycisk2_latwy))
+    przycisk2_latwy.pack()
+    global przycisk3_latwy
+    przycisk3_latwy = tk.Button(root, textvariable=latwy_guzik3, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_c_strip, przycisk3_latwy))
+    przycisk3_latwy.pack()
+    global przycisk4_latwy
+    przycisk4_latwy = tk.Button(root, textvariable=latwy_guzik4, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_d_strip, przycisk4_latwy))
+    przycisk4_latwy.pack()
+    global przycisk5_latwy
+    przycisk5_latwy = tk.Button(root, textvariable=latwy_guzik5, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_e_strip, przycisk5_latwy))
+    przycisk5_latwy.pack()
+    global przycisk6_latwy
+    przycisk6_latwy = tk.Button(root, textvariable=latwy_guzik6, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_f_strip, przycisk6_latwy))
+    przycisk6_latwy.pack()
 
 
 elo = 0
@@ -124,49 +124,53 @@ def dodawanie_bledow_latwe():
     bledy_latwe +=1
     bledy_latwe_var.set("Błędy: " + str(bledy_latwe))
     if bledy_latwe >4:
-        info = msg.showinfo("Koniec", "nob jebany")
+        info = msg.showinfo("Koniec", "koniec")
         if info == "ok":
             root.destroy()
 
-def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz):
+def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz, przycisk):
     if zapytanie_wynik_strip == wybrana_odpowiedz:
         dodawanie_elo()
         obrazek_label.pack_forget()
-        przycisk1.pack_forget()
-        przycisk2.pack_forget()
-        przycisk3.pack_forget()
-        przycisk4.pack_forget()
-        przycisk5.pack_forget()
-        przycisk6.pack_forget()
+        przycisk1_latwy.pack_forget()
+        przycisk2_latwy.pack_forget()
+        przycisk3_latwy.pack_forget()
+        przycisk4_latwy.pack_forget()
+        przycisk5_latwy.pack_forget()
+        przycisk6_latwy.pack_forget()
         latwy()
         print("Jest g")
     else:
+        if wybrana_odpowiedz != zapytanie_wynik_strip:
+            przycisk.config(state="disabled")
+        else:
+            przycisk.config(state="active")
         dodawanie_bledow_latwe()
         print("źle!")
 def sredni():
     zapomnij_guziki()
-    przycisk1 = tk.Button(root,text="Potem").pack()
-    przycisk2 = tk.Button(root,text="Potem").pack()
-    przycisk3 = tk.Button(root,text="Potem").pack()
-    przycisk4 = tk.Button(root,text="Potem").pack()
-    przycisk5 = tk.Button(root,text="Potem").pack()
-    przycisk6 = tk.Button(root,text="Potem").pack()
+    przycisk1_sredni = tk.Button(root,text="Potem").pack()
+    przycisk2_sredni = tk.Button(root,text="Potem").pack()
+    przycisk3_sredni = tk.Button(root,text="Potem").pack()
+    przycisk4_sredni = tk.Button(root,text="Potem").pack()
+    przycisk5_sredni = tk.Button(root,text="Potem").pack()
+    przycisk6_sredni = tk.Button(root,text="Potem").pack()
 def srednio_trudny():
     zapomnij_guziki()
-    przycisk1 = tk.Button(root,text="Potem").pack()
-    przycisk2 = tk.Button(root,text="Potem").pack()
-    przycisk3 = tk.Button(root,text="Potem").pack()
-    przycisk4 = tk.Button(root,text="Potem").pack()
-    przycisk5 = tk.Button(root,text="Potem").pack()
-    przycisk6 = tk.Button(root,text="Potem").pack()
+    przycisk1_srednio_trudny = tk.Button(root,text="Potem").pack()
+    przycisk2_srednio_trudny = tk.Button(root,text="Potem").pack()
+    przycisk3_srednio_trudny = tk.Button(root,text="Potem").pack()
+    przycisk4_srednio_trudny = tk.Button(root,text="Potem").pack()
+    przycisk5_srednio_trudny = tk.Button(root,text="Potem").pack()
+    przycisk6_srednio_trudny = tk.Button(root,text="Potem").pack()
 def trudny():
     zapomnij_guziki()
-    przycisk1 = tk.Button(root,text="Potem").pack()
-    przycisk2 = tk.Button(root,text="Potem").pack()
-    przycisk3 = tk.Button(root,text="Potem").pack()
-    przycisk4 = tk.Button(root,text="Potem").pack()
-    przycisk5 = tk.Button(root,text="Potem").pack()
-    przycisk6 = tk.Button(root,text="Potem").pack()
+    przycisk1_trudny = tk.Button(root,text="Potem").pack()
+    przycisk2_trudny = tk.Button(root,text="Potem").pack()
+    przycisk3_trudny = tk.Button(root,text="Potem").pack()
+    przycisk4_trudny = tk.Button(root,text="Potem").pack()
+    przycisk5_trudny = tk.Button(root,text="Potem").pack()
+    przycisk6_trudny = tk.Button(root,text="Potem").pack()
 
 root = tk.Tk()
 root.title("Duolingo")
