@@ -39,7 +39,7 @@ CREATE TABLE `srednio_trudny` (
 --
 
 INSERT INTO `srednio_trudny` (`id`, `pl`, `text`, `odp`) VALUES
-(1, 'węgiel', 'w_g__l', 'węgiel'),
+(1, 'węgiel', 'w_g__l', 'coal'),
 (2, 'pszczoła', 'b__', 'bee'),
 (3, 'frytki', 'fr__s', 'fries'),
 (4, 'osoba', 'p_rs_n', 'person'),
