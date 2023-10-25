@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox as msg
+from tkinter import Toplevel
 import mysql.connector as baza
 import random
 from PIL import ImageTk, Image
@@ -25,7 +26,7 @@ def zapomnij_guziki():
     PoziomSredni.pack_forget()
 
 
-
+uzyte = []
 def latwy():
     def losowanie():
         global losowe_dobra_odp,losowe_a,losowe_b,losowe_c,losowe_d,losowe_e,losowe_f
@@ -40,6 +41,14 @@ def latwy():
             if losowe_dobra_odp == losowe_a or  losowe_dobra_odp == losowe_b or losowe_dobra_odp == losowe_c or losowe_dobra_odp == losowe_d or losowe_dobra_odp == losowe_e or losowe_dobra_odp == losowe_f:
              break
 
+        uzyte.append(losowe_a)
+        uzyte.append(losowe_b)
+        uzyte.append(losowe_c)
+        uzyte.append(losowe_d)
+        uzyte.append(losowe_e)
+        uzyte.append(losowe_f)
+    def usun_uzyte():
+        uzyte.clear()
     losowanie()
     zapomnij_guziki()
     poprawny_wynik = connect.cursor()
@@ -93,6 +102,9 @@ def latwy():
     print(odp_f_strip)
     image_path = f"Latwy_Zdjecia/{zapytanie_wynik_strip}.gif"
 
+
+
+
     image = Image.open(image_path)
     photo = ImageTk.PhotoImage(image)
     global obrazek_label
@@ -100,24 +112,26 @@ def latwy():
     obrazek_label.image = photo  # Keeping a reference
     obrazek_label.pack()
     global przycisk1_latwy
-    przycisk1_latwy = tk.Button(root, textvariable=latwy_guzik1,command=lambda: (sprawdzenie_dobrej_odpowiedzi(odp_a_strip, przycisk1_latwy),losowanie))
+    przycisk1_latwy = tk.Button(root, textvariable=latwy_guzik1,command=lambda: (sprawdzenie_dobrej_odpowiedzi(odp_a_strip, przycisk1_latwy),losowanie,usun_uzyte))
     przycisk1_latwy.pack()
     global przycisk2_latwy
-    przycisk2_latwy = tk.Button(root, textvariable=latwy_guzik2, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_b_strip, przycisk2_latwy))
+    przycisk2_latwy = tk.Button(root, textvariable=latwy_guzik2, command=lambda: (sprawdzenie_dobrej_odpowiedzi(odp_b_strip, przycisk2_latwy),losowanie,usun_uzyte))
     przycisk2_latwy.pack()
     global przycisk3_latwy
-    przycisk3_latwy = tk.Button(root, textvariable=latwy_guzik3, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_c_strip, przycisk3_latwy))
+    przycisk3_latwy = tk.Button(root, textvariable=latwy_guzik3, command=lambda: (sprawdzenie_dobrej_odpowiedzi(odp_c_strip, przycisk3_latwy),losowanie,usun_uzyte))
     przycisk3_latwy.pack()
     global przycisk4_latwy
-    przycisk4_latwy = tk.Button(root, textvariable=latwy_guzik4, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_d_strip, przycisk4_latwy))
+    przycisk4_latwy = tk.Button(root, textvariable=latwy_guzik4, command=lambda: (sprawdzenie_dobrej_odpowiedzi(odp_d_strip, przycisk4_latwy),losowanie,usun_uzyte))
     przycisk4_latwy.pack()
     global przycisk5_latwy
-    przycisk5_latwy = tk.Button(root, textvariable=latwy_guzik5, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_e_strip, przycisk5_latwy))
+    przycisk5_latwy = tk.Button(root, textvariable=latwy_guzik5, command=lambda: (sprawdzenie_dobrej_odpowiedzi(odp_e_strip, przycisk5_latwy),losowanie,usun_uzyte))
     przycisk5_latwy.pack()
     global przycisk6_latwy
-    przycisk6_latwy = tk.Button(root, textvariable=latwy_guzik6, command=lambda: sprawdzenie_dobrej_odpowiedzi(odp_f_strip, przycisk6_latwy))
+    przycisk6_latwy = tk.Button(root, textvariable=latwy_guzik6, command=lambda: (sprawdzenie_dobrej_odpowiedzi(odp_f_strip, przycisk6_latwy),losowanie,usun_uzyte))
     przycisk6_latwy.pack()
 
+
+       
 
 elo = 0
 def dodawanie_elo():
@@ -147,12 +161,61 @@ def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz, przycisk):
         latwy()
         print("Jest g")
     else:
-        if wybrana_odpowiedz != zapytanie_wynik_strip:
-            przycisk.config(state="disabled")
-        else:
-            przycisk.config(state="active")
+        if wybrana_odpowiedz == odp_a_strip:
+            top = Toplevel()
+            top.title("dobra odp")
+            a = Image.open(f"Latwy_Zdjecia/{odp_a_strip}.gif")
+            a1 = ImageTk.PhotoImage(a)
+            ashowinfo = tk.Label(top, image=a1,width=400,height=400)
+            ashowinfo.image = a1
+            ashowinfo.pack()
+            przycisk1_latwy.config(state="disabled")
+        elif wybrana_odpowiedz == odp_b_strip:
+             top = Toplevel()
+             top.title("dobra odp")
+             a = Image.open(f"Latwy_Zdjecia/{odp_b_strip}.gif")
+             a1 = ImageTk.PhotoImage(a)
+             ashowinfo = tk.Label(top, image=a1,width=400,height=400)
+             ashowinfo.image = a1
+             ashowinfo.pack()
+             przycisk2_latwy.config(state="disabled")
+        elif wybrana_odpowiedz == odp_c_strip:
+             top = Toplevel()
+             top.title("dobra odp")
+             a = Image.open(f"Latwy_Zdjecia/{odp_c_strip}.gif")
+             a1 = ImageTk.PhotoImage(a)
+             ashowinfo = tk.Label(top, image=a1,width=400,height=400)
+             ashowinfo.image = a1
+             ashowinfo.pack()
+             przycisk3_latwy.config(state="disabled")     
+        elif wybrana_odpowiedz == odp_d_strip:
+             top = Toplevel()
+             top.title("dobra odp")
+             a = Image.open(f"Latwy_Zdjecia/{odp_d_strip}.gif")
+             a1 = ImageTk.PhotoImage(a)
+             ashowinfo = tk.Label(top, image=a1,width=400,height=400)
+             ashowinfo.image = a1
+             ashowinfo.pack()
+             przycisk4_latwy.config(state="disabled")
+        elif wybrana_odpowiedz == odp_e_strip:
+             top = Toplevel()
+             top.title("dobra odp")
+             a = Image.open(f"Latwy_Zdjecia/{odp_e_strip}.gif")
+             a1 = ImageTk.PhotoImage(a)
+             ashowinfo = tk.Label(top, image=a1,width=400,height=400)
+             ashowinfo.image = a1
+             ashowinfo.pack()
+             przycisk5_latwy.config(state="disabled")
+        elif wybrana_odpowiedz == odp_f_strip:
+             top = Toplevel()
+             top.title("dobra odp")
+             a = Image.open(f"Latwy_Zdjecia/{odp_f_strip}.gif")
+             a1 = ImageTk.PhotoImage(a)
+             ashowinfo = tk.Label(top, image=a1,width=400,height=400)
+             ashowinfo.image = a1
+             ashowinfo.pack()
+             przycisk6_latwy.config(state="disabled")
         dodawanie_bledow_latwe()
-        print("źle!")
 def sredni():
     zapomnij_guziki()
     przycisk1_sredni = tk.Button(root,text="Potem").pack()
@@ -177,6 +240,20 @@ def trudny():
     przycisk4_trudny = tk.Button(root,text="Potem").pack()
     przycisk5_trudny = tk.Button(root,text="Potem").pack()
     przycisk6_trudny = tk.Button(root,text="Potem").pack()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 root = tk.Tk()
 root.title("Duolingo")
