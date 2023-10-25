@@ -165,8 +165,72 @@ def srednio_trudny():
     polskie_slowo_strip = polskie_slowo_str.strip('(),\'')
     print(polskie_slowo_strip)
     pl_var.set(polskie_slowo_strip)
+    ang_zapytanie = connect.cursor()
+    ang_zapytanie.execute(f"SELECT text FROM srednio_trudny WHERE id = {losowe}")
+    ang_slowo = ang_zapytanie.fetchone()
+    ang_slowo_str = str(ang_slowo)
+    global ang_slowo_strip
+    ang_slowo_strip = ang_slowo_str.strip('(),\'')
+    print(ang_slowo_strip)
+    en_czesci_var.set(ang_slowo_strip)
+    samogloska_zapytanie = connect.cursor()
+    samogloska_zapytanie.execute(f"SELECT odp FROM srednio_trudny WHERE id = {losowe}")
+    samogloska_slowo = samogloska_zapytanie.fetchone()
+    samogloska_str = str(samogloska_slowo)
+    global samogloska_strip
+    samogloska_strip = samogloska_str.strip('(),\'')
+    print(samogloska_strip)
+    print("aaa" + str(len(samogloska_strip)))
+    
 
-    polskie = tk.Label(textvariable=pl_var).pack()
+
+    polskie = tk.Label(root, textvariable=pl_var)
+    polskie.pack()
+    angielskie = tk.Label(root, textvariable=en_czesci_var)
+    angielskie.pack()
+    dobre_samo_tekst = tk.Label(root, text="Dobre samogłoski:")
+    dobre_samo_tekst.pack()
+    dobre_samo = tk.Label(root, textvariable=dobre_samo_var, fg="green")
+    dobre_samo.pack()
+    zle_samo_tekst = tk.Label(root, text="Złe samogłoski:")
+    zle_samo_tekst.pack()
+    zle_samo = tk.Label(root, textvariable=zle_samo_var, fg="red")
+    zle_samo.pack()
+    samogloska_entry = tk.Entry(root, textvariable=samogloska_entry_var)
+    samogloska_entry.pack()
+    samogloska_guzik = tk.Button(root, text="Sprawdź", command=lambda:sprawdzanie_srednio_trudne())
+    samogloska_guzik.pack()
+
+dobre = []
+zle = []
+jedna = []
+def sprawdzanie_srednio_trudne():
+        odpowiedz = samogloska_entry_var.get()
+        print(odpowiedz)
+        samo = samogloska_strip.split("#")
+        print(samo)
+        if len(samogloska_strip) > 1:
+            if odpowiedz in samo:
+                dobre.append(odpowiedz)
+                samo.remove(odpowiedz)
+                print(dobre)
+                dobre_samo_var.set(dobre)
+            else:
+                zle.append(odpowiedz)
+                print(zle)
+                zle_samo_var.set(zle)
+        else:
+            if odpowiedz in samo:
+                dobre.append(odpowiedz)
+                samo.remove(odpowiedz)
+                print(dobre)
+                dobre_samo_var.set(dobre)
+            else:
+                zle.append(odpowiedz)
+                print(zle)
+                zle_samo_var.set(zle)
+                
+
 def trudny():
     zapomnij_guziki()
     przycisk1_trudny = tk.Button(root,text="Potem").pack()
@@ -176,12 +240,18 @@ def trudny():
     przycisk5_trudny = tk.Button(root,text="Potem").pack()
     przycisk6_trudny = tk.Button(root,text="Potem").pack()
 
+
+
 root = tk.Tk()
 root.title("Duolingo")
 root.geometry("900x600")
 root.resizable(False, False)
 
 pl_var = tk.StringVar()
+en_czesci_var = tk.StringVar()
+samogloska_entry_var = tk.StringVar()
+dobre_samo_var = tk.StringVar()
+zle_samo_var = tk.StringVar()
 elo_var = tk.IntVar()
 bledy_latwe_var = tk.IntVar()
 latwy_guzik1 = tk.StringVar()
