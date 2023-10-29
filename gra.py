@@ -240,14 +240,21 @@ def sprawdź_trudny():
 def literki_trudny():
     podpowiedz = ""
     user_answer = trudny_input.get()
-    #if user_answer == odp_text_strip or len(user_answer) > len (odp_text_strip): #działa tylko i tylko wtedy, gdy długość odpowiedzi GRACZA jest równa długości POPRAWNEJ odpowiedzi lub jej długość jest większa niż porawna odpowiedź
-    for i in range(len(str(odp_text_strip))):
-        if odp_text_strip[i] == user_answer[i]:
-            podpowiedz = podpowiedz + user_answer[i]
-        else:
+    if user_answer == odp_text_strip or len(user_answer) > len (odp_text_strip): #działa tylko i tylko wtedy, gdy długość odpowiedzi GRACZA jest równa długości POPRAWNEJ odpowiedzi lub jej długość jest większa niż porawna odpowiedź
+        for i in range(len(str(odp_text_strip))):
+            if odp_text_strip[i] == user_answer[i]:
+                podpowiedz = podpowiedz + user_answer[i]
+            else:
+                podpowiedz = podpowiedz + "_"
+    else: #patrząc, że pętla "for" jest uzależniona od długości poprawnej odpowiedzi tj. będzie działać nawet gdy długość odpowiedzi gracza jest dłuższa bierzemy przypadek gdy odpowiedź gracza może być krótsza od tej porpawnej
+        dlugosc_do_nadrobienia = len(odp_text_strip) - len(user_answer)
+        for x in range(len(str(user_answer))):
+            if odp_text_strip[x] == user_answer[x]:
+                podpowiedz = podpowiedz + user_answer[x]
+            else:
+                podpowiedz = podpowiedz + "_"
+        for x in range(dlugosc_do_nadrobienia):
             podpowiedz = podpowiedz + "_"
-    #else: #patrząc, że pętla "for" jest uzależniona od długości poprawnej odpowiedzi tj. będzie działać nawet gdy długość odpowiedzi gracza jest dłuższa bierzemy przypadek gdy odpowiedź gracza może być krótsza od tej porpawnej
-        
     wprowadzony_text.set(podpowiedz)
     wprowadzona_odpowiedz.pack()
     
