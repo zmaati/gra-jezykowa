@@ -30,7 +30,7 @@ Aplikacja łączy się z bazą danych MySQL przy użyciu biblioteki mysql.connec
 Host: localhost
 Użytkownik: root
 Hasło: [Brak hasła]
-Baza danych: milionerzy
+Baza danych: duolingo
 ```
 
 ## 4. Zmienne
