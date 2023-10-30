@@ -606,7 +606,6 @@ def srednio_trudny():
 
 dobre = []
 zle = []
-jedna = []
 samogloski = ["a","e","i","y","u","o"]
 def sprawdzanie_srednio_trudne():
     odpowiedz = samogloska_entry_var.get()
