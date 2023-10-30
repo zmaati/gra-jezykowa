@@ -285,7 +285,7 @@ def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz):
             elo_label.pack_forget()
             print(elo)
             schowaj_latwy()
-            if elo > 1:
+            if elo >= 1:
                 info = msg.showinfo("Koniec", f"Udało ci się zdobyć {elo} punktów przed zrobieniem 5 blędów.\nGratulacje!")
                 if info == "ok":
                     bledy = 0
@@ -541,7 +541,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             elo_label.pack_forget()
             print(elo)
             schowaj_sredni()
-            if elo > 1:
+            if elo >= 1:
                 info = msg.showinfo("Koniec", f"Udało ci się zdobyć {elo} punktów przed zrobieniem 5 blędów.\nGratulacje!")
                 if info == "ok":
                     bledy = 0
@@ -667,7 +667,7 @@ def sprawdzanie_srednio_trudne():
             elo_label.pack_forget()
             print(elo)
             schowaj_st()
-            if elo > 1:
+            if elo >= 1:
                 info = msg.showinfo("Koniec", f"Udało ci się zdobyć {elo} punktów przed zrobieniem 5 blędów.\nGratulacje!")
                 if info == "ok":
                     bledy = 0
@@ -749,7 +749,7 @@ def sprawdz_trudny():
             elo_label.pack_forget()
             print(elo)
             schowaj_trudne()
-            if elo > 1:
+            if elo >= 1:
                 info = msg.showinfo("Koniec", f"Udało ci się zdobyć {elo} punktów przed zrobieniem 5 blędów.\nGratulacje!")
                 if info == "ok":
                     bledy = 0
