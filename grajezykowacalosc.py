@@ -177,12 +177,12 @@ def latwy():
     latwy_guzik6.set(odp_f_strip)
     print(odp_f_strip)
 
-    elo_label.place(x=450,y=0)
+    elo_label.place(x=430,y=0)
 
 
 
     bledy_latwe_label = tk.Label(root, textvariable=bledy_l_var, font=('Aharoni','14','bold'), bg='#7ac70c')
-    bledy_latwe_label.place(x=415,y=30)
+    bledy_latwe_label.place(x=400,y=30)
     image_path = f"Latwy_Zdjecia/{zapytanie_wynik_strip}.gif"
 
 
@@ -254,7 +254,7 @@ def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz):
             a1 = ImageTk.PhotoImage(a)
             ashowinfo = tk.Label(top, image=a1,width=400,height=400)
             ashowinfo.image = a1
-            ashowinfo.place()
+            ashowinfo.grid(row=0, column=0)
             przycisk1_latwy.config(state="disabled")
         elif wybrana_odpowiedz == odp_b_strip:
              top = Toplevel()
@@ -263,7 +263,7 @@ def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz):
              a1 = ImageTk.PhotoImage(a)
              ashowinfo = tk.Label(top, image=a1,width=400,height=400)
              ashowinfo.image = a1
-             ashowinfo.place()
+             ashowinfo.grid(row=0, column=0)
              przycisk2_latwy.config(state="disabled")
         elif wybrana_odpowiedz == odp_c_strip:
              top = Toplevel()
@@ -272,7 +272,7 @@ def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz):
              a1 = ImageTk.PhotoImage(a)
              ashowinfo = tk.Label(top, image=a1,width=400,height=400)
              ashowinfo.image = a1
-             ashowinfo.place()
+             ashowinfo.grid(row=0, column=0)
              przycisk3_latwy.config(state="disabled")
         elif wybrana_odpowiedz == odp_d_strip:
              top = Toplevel()
@@ -281,7 +281,7 @@ def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz):
              a1 = ImageTk.PhotoImage(a)
              ashowinfo = tk.Label(top, image=a1,width=400,height=400)
              ashowinfo.image = a1
-             ashowinfo.place()
+             ashowinfo.grid(row=0, column=0)
              przycisk4_latwy.config(state="disabled")
         elif wybrana_odpowiedz == odp_e_strip:
              top = Toplevel()
@@ -290,7 +290,7 @@ def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz):
              a1 = ImageTk.PhotoImage(a)
              ashowinfo = tk.Label(top, image=a1,width=400,height=400)
              ashowinfo.image = a1
-             ashowinfo.place()
+             ashowinfo.grid(row=0, column=0)
              przycisk5_latwy.config(state="disabled")
         elif wybrana_odpowiedz == odp_f_strip:
              top = Toplevel()
@@ -299,7 +299,7 @@ def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz):
              a1 = ImageTk.PhotoImage(a)
              ashowinfo = tk.Label(top, image=a1,width=400,height=400)
              ashowinfo.image = a1
-             ashowinfo.place()
+             ashowinfo.grid(row=0, column=0)
              przycisk6_latwy.config(state="disabled")
         dodawanie_bledow(bledy_l_var)
         if bledy > 4:
@@ -421,13 +421,13 @@ def sredni():
     odph_sprawdz_wynik = str(odph_spawdz.fetchone())
     odp_h_sprawdzenie = odph_sprawdz_wynik.strip('(),\'')
 
-    elo_label.place(x=450,y=0)
+    elo_label.place(x=430,y=0)
 
     global odp_label, przycisk1_sredni, przycisk2_sredni, przycisk3_sredni, przycisk4_sredni, przycisk5_sredni, \
         przycisk6_sredni, przycisk7_sredni, przycisk8_sredni, bledy_srednie_label
     bledy_srednie_label = tk.Label(root, textvariable=bledy_s_var,font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
 
-    bledy_srednie_label.place(x=415,y=30)
+    bledy_srednie_label.place(x=400,y=30)
 
     odp_label = tk.Label(root, textvariable=sredni_odp_label, font=('Aharoni','18','bold'), bg='#7ac70c', height=1)
     odp_label.place(x=150,y=200)
@@ -499,7 +499,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             a1 = ImageTk.PhotoImage(a)
             ashowinfo = tk.Label(top, image=a1, width=400, height=400)
             ashowinfo.image = a1
-            ashowinfo.place()
+            ashowinfo.grid(row=0, column=0)
             przycisk1_sredni.config(state="disabled")
 
         elif wybrana_odpowiedz == odp_b_sprawdzenie:
@@ -509,7 +509,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             a1 = ImageTk.PhotoImage(a)
             ashowinfo = tk.Label(top, image=a1, width=400, height=400)
             ashowinfo.image = a1
-            ashowinfo.place()
+            ashowinfo.grid(row=0, column=0)
             przycisk2_sredni.config(state="disabled")
 
         elif wybrana_odpowiedz == odp_c_sprawdzenie:
@@ -519,7 +519,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             a1 = ImageTk.PhotoImage(a)
             ashowinfo = tk.Label(top, image=a1, width=400, height=400)
             ashowinfo.image = a1
-            ashowinfo.place()
+            ashowinfo.grid(row=0, column=0)
             przycisk3_sredni.config(state="disabled")
 
         elif wybrana_odpowiedz == odp_d_sprawdzenie:
@@ -529,7 +529,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             a1 = ImageTk.PhotoImage(a)
             ashowinfo = tk.Label(top, image=a1, width=400, height=400)
             ashowinfo.image = a1
-            ashowinfo.place()
+            ashowinfo.grid(row=0, column=0)
             przycisk4_sredni.config(state="disabled")
 
         elif wybrana_odpowiedz == odp_e_sprawdzenie:
@@ -539,7 +539,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             a1 = ImageTk.PhotoImage(a)
             ashowinfo = tk.Label(top, image=a1, width=400, height=400)
             ashowinfo.image = a1
-            ashowinfo.place()
+            ashowinfo.grid(row=0, column=0)
             przycisk5_sredni.config(state="disabled")
 
         elif wybrana_odpowiedz == odp_f_sprawdzenie:
@@ -549,7 +549,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             a1 = ImageTk.PhotoImage(a)
             ashowinfo = tk.Label(top, image=a1, width=400, height=400)
             ashowinfo.image = a1
-            ashowinfo.place()
+            ashowinfo.grid(row=0, column=0)
             przycisk6_sredni.config(state="disabled")
         elif wybrana_odpowiedz == odp_g_sprawdzenie:
             top = Toplevel()
@@ -558,7 +558,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             a1 = ImageTk.PhotoImage(a)
             ashowinfo = tk.Label(top, image=a1, width=400, height=400)
             ashowinfo.image = a1
-            ashowinfo.place()
+            ashowinfo.grid(row=0, column=0)
             przycisk7_sredni.config(state="disabled")
         elif wybrana_odpowiedz == odp_h_sprawdzenie:
             top = Toplevel()
@@ -567,7 +567,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             a1 = ImageTk.PhotoImage(a)
             ashowinfo = tk.Label(top, image=a1, width=400, height=400)
             ashowinfo.image = a1
-            ashowinfo.place()
+            ashowinfo.grid(row=0, column=0)
             przycisk8_sredni.config(state="disabled")
         dodawanie_bledow(bledy_s_var)
         if bledy > 4:
@@ -620,35 +620,35 @@ def srednio_trudny():
 
 
 
-    elo_label.place(x=450,y=0)
+    elo_label.place(x=430,y=0)
 
 
     bledy_st_label = tk.Label(root, textvariable=bledy_st_var, font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
-    bledy_st_label.place(x=415,y=30)
+    bledy_st_label.place(x=400,y=30)
 
-    polskie = tk.Label(root, textvariable=pl_var, font=('Aharoni','18','bold'), bg='#7ac70c', height=1)
-    polskie.place(x=415, y=100)
+    polskie = tk.Label(root, textvariable=pl_var, font=('Aharoni','18','bold'), bg='#7ac70c', width=13, height=1)
+    polskie.place(x=345, y=100)
 
-    angielskie = tk.Label(root, textvariable=en_czesci_var, font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
-    angielskie.place(x=415,y=150)
+    angielskie = tk.Label(root, textvariable=en_czesci_var, font=('Aharoni','14','bold'), bg='#7ac70c', width=13, height=1)
+    angielskie.place(x=365,y=150)
 
     dobre_samo_tekst = tk.Label(root, text="Dobre samogłoski:", font=('Aharoni','18','bold'), bg='#7ac70c', height=1)
-    dobre_samo_tekst.place(x=350,y= 200)
+    dobre_samo_tekst.place(x=333,y= 200)
 
-    dobre_samo = tk.Label(root, textvariable=dobre_samo_var, fg="green", font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
-    dobre_samo.place(x=425,y=250)
+    dobre_samo = tk.Label(root, textvariable=dobre_samo_var, fg="green", font=('Aharoni','14','bold'), bg='#7ac70c', width=10, height=1)
+    dobre_samo.place(x=380,y=250)
 
     zle_samo_tekst = tk.Label(root, text="Złe samogłoski:", font=('Aharoni','18','bold'), bg='#7ac70c', height=1)
     zle_samo_tekst.place(x=350,y=300)
 
-    zle_samo = tk.Label(root, textvariable=zle_samo_var, fg="red", font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
-    zle_samo.place(x=425,y=350)
+    zle_samo = tk.Label(root, textvariable=zle_samo_var, fg="red", font=('Aharoni','14','bold'), bg='#7ac70c', width=10, height=1)
+    zle_samo.place(x=380,y=350)
 
     samogloska_entry = tk.Entry(root, textvariable=samogloska_entry_var, font=('Aharoni','14','bold'), bg='#7ac70c')
-    samogloska_entry.place(x=350,y=400)
+    samogloska_entry.place(x=333,y=400)
 
     samogloska_guzik = tk.Button(root, text="Sprawdź", command=lambda: sprawdzanie_srednio_trudne(), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
-    samogloska_guzik.place(x=400,y=450)
+    samogloska_guzik.place(x=390,y=450)
 
 
     samo = samogloska_strip.split("#")
@@ -735,23 +735,23 @@ def trudny():
     
     global polish_label, input_label, zatwierdz, wprowadzony_text, wprowadzona_odpowiedz, bledy_trudne_label
     zapomnij_guziki()
-    elo_label.place(x=450,y=0)
+    elo_label.place(x=430,y=0)
 
     bledy_trudne_label = tk.Label(root, textvariable=bledy_t_var, font=('Aharoni','13','bold'), bg='#7ac70c')
-    bledy_trudne_label.place(x=425,y=30)
+    bledy_trudne_label.place(x=400,y=30)
 
     polish_label = tk.Label(root, textvariable=trudny_pl, font=('Aharoni','18','bold'), bg='#7ac70c')
-    polish_label.place(x=425,y=100)
+    polish_label.place(x=407,y=100)
 
     input_label = tk.Entry(root, textvariable=trudny_input, font=('Aharoni','13','bold'), bg='#7ac70c')
-    input_label.place(x=375, y=150)
+    input_label.place(x=365, y=150)
 
 
-    wprowadzona_odpowiedz = tk.Label(root, textvariable=wprowadzony_text, fg="green")
+    wprowadzona_odpowiedz = tk.Label(root, textvariable=wprowadzony_text, fg="black", bg="#7ac70c", font=('Aharoni','13','bold'))
 
 
     zatwierdz = tk.Button(root, text="Zatwierdź", command=lambda: sprawdz_trudny(), font=('Aharoni','13','bold'), bg='#7ac70c')
-    zatwierdz.place(x=425, y=200)
+    zatwierdz.place(x=405, y=200)
 
     for i in range(20):
         global losowe
@@ -846,7 +846,7 @@ def literki_trudny():
         for x in range(dlugosc_do_nadrobienia):
             podpowiedz = podpowiedz + "_"
     wprowadzony_text.set(podpowiedz)
-    wprowadzona_odpowiedz.place()
+    wprowadzona_odpowiedz.place(x=430, y=270)
 
 
 root = tk.Tk()
@@ -906,16 +906,16 @@ elo_label = tk.Label(root, textvariable=elo_var, font=('Aharoni','13','bold'), b
 ogolne_punkty_label = tk.Label(root, textvariable=ogolne_punkty_var, bg='#7ac70c', font=('Aharoni', '13', 'bold'))
 ogolne_punkty_label.place(x=0, y=0)
 
-PoziomLatwy = tk.Button(root, text="Poziom Łatwy", command=latwy, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#8ee000')
+PoziomLatwy = tk.Button(root, text="Poziom Łatwy", command=latwy, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#43C000')
 PoziomLatwy.grid(row=1, column=1, padx=130, pady=150)
 
-PoziomSredni = tk.Button(root, text="Poziom Średni", command=sredni, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#8ee000')
+PoziomSredni = tk.Button(root, text="Poziom Średni", command=sredni, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#43C000')
 PoziomSredni.grid(row=1, column=2)
 
-PoziomSredniotrudny = tk.Button(root, text="Poziom Średnio-trudny", command=srednio_trudny, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#8ee000')
+PoziomSredniotrudny = tk.Button(root, text="Poziom Średnio-trudny", command=srednio_trudny, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#43C000')
 PoziomSredniotrudny.grid(row=2, column=2)
 
-PoziomTrudny = tk.Button(root, text="Poziom Trudny", command=trudny, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#8ee000')
+PoziomTrudny = tk.Button(root, text="Poziom Trudny", command=trudny, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#43C000')
 PoziomTrudny.grid(row=2, column=1)
 
 
