@@ -181,7 +181,7 @@ def latwy():
 
 
 
-    bledy_latwe_label = tk.Label(root, textvariable=bledy_l_var, font=('Aharoni','14','bold'), bg='#7ac70c')
+    bledy_latwe_label = tk.Label(root, textvariable=bledy_l_var, font=('Aharoni','14','bold'), bg='#7CCC18')
     bledy_latwe_label.place(x=400,y=30)
     image_path = f"Latwy_Zdjecia/{zapytanie_wynik_strip}.gif"
 
@@ -196,27 +196,27 @@ def latwy():
 
 
     przycisk1_latwy = tk.Button(root, textvariable=latwy_guzik1, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi(odp_a_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7ac70c',height=1)
+    sprawdzenie_dobrej_odpowiedzi(odp_a_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7CCC18',height=1)
     przycisk1_latwy.place(x=450, y=150)
 
     przycisk2_latwy = tk.Button(root, textvariable=latwy_guzik2, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi(odp_b_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi(odp_b_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7CCC18', height=1)
     przycisk2_latwy.place(x=450, y=200)
 
     przycisk3_latwy = tk.Button(root, textvariable=latwy_guzik3, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi(odp_c_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi(odp_c_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7CCC18', height=1)
     przycisk3_latwy.place(x=450,y=250)
 
     przycisk4_latwy = tk.Button(root, textvariable=latwy_guzik4, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi(odp_d_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi(odp_d_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7CCC18', height=1)
     przycisk4_latwy.place(x=450, y=300)
 
     przycisk5_latwy = tk.Button(root, textvariable=latwy_guzik5, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi(odp_e_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi(odp_e_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7CCC18', height=1)
     przycisk5_latwy.place(x=450, y=350)
 
     przycisk6_latwy = tk.Button(root, textvariable=latwy_guzik6, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi(odp_f_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi(odp_f_strip), losowanie, usun_uzyte), font=('Aharoni','14','bold'), bg='#7CCC18', height=1)
     przycisk6_latwy.place(x=450, y=400)
 
 
@@ -425,43 +425,51 @@ def sredni():
 
     global odp_label, przycisk1_sredni, przycisk2_sredni, przycisk3_sredni, przycisk4_sredni, przycisk5_sredni, \
         przycisk6_sredni, przycisk7_sredni, przycisk8_sredni, bledy_srednie_label
-    bledy_srednie_label = tk.Label(root, textvariable=bledy_s_var,font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    bledy_srednie_label = tk.Label(root, textvariable=bledy_s_var,font=('Aharoni','14','bold'), bg='#7CCC18', height=1)
 
     bledy_srednie_label.place(x=400,y=30)
 
-    odp_label = tk.Label(root, textvariable=sredni_odp_label, font=('Aharoni','18','bold'), bg='#7ac70c', height=1)
+    odp_label = tk.Label(root, textvariable=sredni_odp_label, font=('Aharoni','18','bold'), bg='#7CCC18', height=1)
     odp_label.place(x=150,y=200)
     
     przycisk1_sredni = tk.Button(root, textvariable=sredny_guzik1, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi_sredni(odp_a_sprawdzenie, przycisk1_sredni), losowanie), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi_sredni(odp_a_sprawdzenie, przycisk1_sredni), losowanie), font=('Aharoni','14',
+                                                                                                 'bold'), bg='#7CCC18', height=1)
     przycisk1_sredni.place(x=415, y=100)
 
     przycisk2_sredni = tk.Button(root, textvariable=sredny_guzik2, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi_sredni(odp_b_sprawdzenie, przycisk2_sredni), losowanie), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi_sredni(odp_b_sprawdzenie, przycisk2_sredni), losowanie), font=('Aharoni','14',
+                                                                                                 'bold'), bg='#7CCC18', height=1)
     przycisk2_sredni.place(x=415,y=150)
 
     przycisk3_sredni = tk.Button(root, textvariable=sredny_guzik3, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi_sredni(odp_c_sprawdzenie, przycisk3_sredni), losowanie), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi_sredni(odp_c_sprawdzenie, przycisk3_sredni), losowanie), font=('Aharoni','14',
+                                                                                                 'bold'), bg='#7CCC18', height=1)
     przycisk3_sredni.place(x=415,y=200)
 
     przycisk4_sredni = tk.Button(root, textvariable=sredny_guzik4, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi_sredni(odp_d_sprawdzenie, przycisk4_sredni), losowanie), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi_sredni(odp_d_sprawdzenie, przycisk4_sredni), losowanie), font=('Aharoni','14',
+                                                                                                 'bold'), bg='#7CCC18', height=1)
     przycisk4_sredni.place(x=415,y=250)
 
     przycisk5_sredni = tk.Button(root, textvariable=sredny_guzik5, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi_sredni(odp_e_sprawdzenie, przycisk5_sredni), losowanie), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi_sredni(odp_e_sprawdzenie, przycisk5_sredni), losowanie), font=('Aharoni','14',
+                                                                                                 'bold'), bg='#7CCC18', height=1)
     przycisk5_sredni.place(x=415,y=300)
 
     przycisk6_sredni = tk.Button(root, textvariable=sredny_guzik6, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi_sredni(odp_f_sprawdzenie, przycisk6_sredni), losowanie), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi_sredni(odp_f_sprawdzenie, przycisk6_sredni), losowanie), font=('Aharoni','14',
+                                                                                                 'bold'), bg='#7CCC18', height=1)
     przycisk6_sredni.place(x=415,y=350)
 
     przycisk7_sredni = tk.Button(root, textvariable=sredny_guzik7, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi_sredni(odp_g_sprawdzenie, przycisk7_sredni), losowanie), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi_sredni(odp_g_sprawdzenie, przycisk7_sredni), losowanie), font=('Aharoni','14',
+                                                                                                 'bold'), bg='#7CCC18', height=1)
     przycisk7_sredni.place(x=415,y=400)
 
     przycisk8_sredni = tk.Button(root, textvariable=sredny_guzik8, command=lambda: (
-    sprawdzenie_dobrej_odpowiedzi_sredni(odp_h_sprawdzenie, przycisk8_sredni), losowanie), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    sprawdzenie_dobrej_odpowiedzi_sredni(odp_h_sprawdzenie, przycisk8_sredni), losowanie), font=('Aharoni','14',
+                                                                                                 'bold'), bg='#7CCC18', height=1)
     przycisk8_sredni.place(x=415,y=450)
 
 
@@ -598,7 +606,8 @@ def srednio_trudny():
         if losowe in uzyte:  # Jeżeli pytanie zostało już uzyte niech dalej losuje
             continue
         else:
-            uzyte.append(losowe)
+            break
+    uzyte.append(losowe)
     polskie_zapytanie = connect.cursor()
     polskie_zapytanie.execute(f"SELECT pl FROM srednio_trudny WHERE id = {losowe}")
     polskie_slowo = polskie_zapytanie.fetchone()
@@ -623,35 +632,49 @@ def srednio_trudny():
     elo_label.place(x=430,y=0)
 
 
-    bledy_st_label = tk.Label(root, textvariable=bledy_st_var, font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    bledy_st_label = tk.Label(root, textvariable=bledy_st_var, font=('Aharoni','14','bold'), bg='#7CCC18', height=1)
     bledy_st_label.place(x=400,y=30)
 
-    polskie = tk.Label(root, textvariable=pl_var, font=('Aharoni','18','bold'), bg='#7ac70c', width=13, height=1)
+    polskie = tk.Label(root, textvariable=pl_var, font=('Aharoni','18','bold'), bg='#7CCC18', width=13, height=1)
     polskie.place(x=345, y=100)
 
-    angielskie = tk.Label(root, textvariable=en_czesci_var, font=('Aharoni','14','bold'), bg='#7ac70c', width=13, height=1)
+    angielskie = tk.Label(root, textvariable=en_czesci_var, font=('Aharoni','14','bold'), bg='#7CCC18', width=13, height=1)
     angielskie.place(x=365,y=150)
 
-    dobre_samo_tekst = tk.Label(root, text="Dobre samogłoski:", font=('Aharoni','18','bold'), bg='#7ac70c', height=1)
+    dobre_samo_tekst = tk.Label(root, text="Dobre samogłoski:", font=('Aharoni','18','bold'), bg='#7CCC18', height=1)
     dobre_samo_tekst.place(x=333,y= 200)
 
-    dobre_samo = tk.Label(root, textvariable=dobre_samo_var, fg="green", font=('Aharoni','14','bold'), bg='#7ac70c', width=10, height=1)
+    dobre_samo = tk.Label(root, textvariable=dobre_samo_var, fg="green", font=('Aharoni','14','bold'), bg='#7CCC18',
+                          width=10, height=1)
     dobre_samo.place(x=380,y=250)
 
-    zle_samo_tekst = tk.Label(root, text="Złe samogłoski:", font=('Aharoni','18','bold'), bg='#7ac70c', height=1)
+    zle_samo_tekst = tk.Label(root, text="Złe samogłoski:", font=('Aharoni','18','bold'), bg='#7CCC18', height=1)
     zle_samo_tekst.place(x=350,y=300)
 
-    zle_samo = tk.Label(root, textvariable=zle_samo_var, fg="red", font=('Aharoni','14','bold'), bg='#7ac70c', width=10, height=1)
+    zle_samo = tk.Label(root, textvariable=zle_samo_var, fg="red", font=('Aharoni','14','bold'), bg='#7CCC18', width=10,
+                        height=1)
     zle_samo.place(x=380,y=350)
 
-    samogloska_entry = tk.Entry(root, textvariable=samogloska_entry_var, font=('Aharoni','14','bold'), bg='#7ac70c')
+    samogloska_entry = tk.Entry(root, textvariable=samogloska_entry_var, font=('Aharoni','14','bold'), bg='#7CCC18')
     samogloska_entry.place(x=333,y=400)
 
-    samogloska_guzik = tk.Button(root, text="Sprawdź", command=lambda: sprawdzanie_srednio_trudne(), font=('Aharoni','14','bold'), bg='#7ac70c', height=1)
+    samogloska_guzik = tk.Button(root, text="Sprawdź", command=lambda: sprawdzanie_srednio_trudne(), font=('Aharoni',
+                                                                                                           '14','bold'), bg='#7CCC18', height=1)
     samogloska_guzik.place(x=390,y=450)
 
-
     samo = samogloska_strip.split("#")
+
+def if_info_answer_ok():
+    global elo,bledy
+    bledy = 0
+    elo = 0
+    elo_var.set(elo)
+    dobre.clear()
+    uzyte.clear()
+    zle.clear()
+    dobre_samo_var.set("")
+    zle_samo_var.set("")
+    bledy_st_var.set("Błędy: "+str(bledy))
 
 dobre = []
 zle = []
@@ -659,7 +682,7 @@ jedna = []
 samogloski = ["a","e","i","y","u","o"]
 def sprawdzanie_srednio_trudne():
     odpowiedz = samogloska_entry_var.get()
-
+    odpowiedz = odpowiedz.lower()
     if odpowiedz in samo:
         dobre.append(odpowiedz)
         samo.remove(odpowiedz)
@@ -674,10 +697,7 @@ def sprawdzanie_srednio_trudne():
                 info = msg.showinfo("Koniec", f"Udało ci się ukonczyć ten test ze wszystkimi punktami ("
                                               f"{elo}).\nGratulacje!")
                 if info == "ok":
-                    bledy = 0
-                    elo = 0
-                    elo_var.set(elo)
-                    uzyte.clear()
+                    if_info_answer_ok()
             else:
                 bledy_st_label.place_forget()
                 polskie.place_forget()
@@ -689,11 +709,11 @@ def sprawdzanie_srednio_trudne():
                 samogloska_entry.place_forget()
                 samogloska_guzik.place_forget()
                 srednio_trudny()
-            dobre.clear()
-            zle.clear()
-            dobre_samo_var.set("")
-            zle_samo_var.set("")
-            dodawanie_elo()
+                dodawanie_elo()
+                dobre.clear()
+                zle.clear()
+                dobre_samo_var.set("")
+                zle_samo_var.set("")
     elif odpowiedz == "" or odpowiedz not in samogloski:
         try:
             zle.remove(odpowiedz)
@@ -719,16 +739,12 @@ def sprawdzanie_srednio_trudne():
             if elo >= 1:
                 info = msg.showinfo("Koniec", f"Udało ci się zdobyć {elo} punktów przed zrobieniem 5 blędów.\nGratulacje!")
                 if info == "ok":
-                    bledy = 0
-                    elo = 0
-                    elo_var.set(elo)
+                    if_info_answer_ok()
             else:
                 info = msg.showinfo("Koniec",
                                     f"Niestety nie udało ci się zdobyć żadnych punktów")
                 if info == "ok":
-                    bledy = 0
-                    elo = 0
-                    elo_var.set(elo)
+                    if_info_answer_ok()
 
 
 def trudny():
@@ -737,21 +753,26 @@ def trudny():
     zapomnij_guziki()
     elo_label.place(x=430,y=0)
 
-    bledy_trudne_label = tk.Label(root, textvariable=bledy_t_var, font=('Aharoni','13','bold'), bg='#7ac70c')
+    bledy_trudne_label = tk.Label(root, textvariable=bledy_t_var, font=('Aharoni','13','bold'), bg='#7CCC18')
     bledy_trudne_label.place(x=400,y=30)
 
-    polish_label = tk.Label(root, textvariable=trudny_pl, font=('Aharoni','18','bold'), bg='#7ac70c')
-    polish_label.place(x=407,y=100)
+    polish_label = tk.Label(root, textvariable=trudny_pl, font=('Aharoni','18','bold'), bg='#7CCC18', width=13,
+                            height=1)
+    polish_label.place(x=337,y=100)
 
-    input_label = tk.Entry(root, textvariable=trudny_input, font=('Aharoni','13','bold'), bg='#7ac70c')
-    input_label.place(x=365, y=150)
-
-
-    wprowadzona_odpowiedz = tk.Label(root, textvariable=wprowadzony_text, fg="black", bg="#7ac70c", font=('Aharoni','13','bold'))
+    input_label = tk.Entry(root, textvariable=trudny_input, font=('Aharoni','13','bold'), bg='#7CCC18')
+    input_label.place(x=345, y=150)
 
 
-    zatwierdz = tk.Button(root, text="Zatwierdź", command=lambda: sprawdz_trudny(), font=('Aharoni','13','bold'), bg='#7ac70c')
-    zatwierdz.place(x=405, y=200)
+    wprowadzona_odpowiedz = tk.Label(root, textvariable=wprowadzony_text, fg="black", bg="#7CCC18", font=('Aharoni',
+                                                                                                          '13',
+                                                                                                          'bold'),
+                                     width=10, height=1)
+
+
+    zatwierdz = tk.Button(root, text="Zatwierdź", command=lambda: sprawdz_trudny(), font=('Aharoni','13','bold'),
+                          bg='#7CCC18')
+    zatwierdz.place(x=392, y=200)
 
     for i in range(20):
         global losowe
@@ -759,8 +780,8 @@ def trudny():
         if losowe in uzyte:  # Jeżeli pytanie zostało już uzyte niech dalej losuje
             continue
         else:
-            uzyte.append(losowe)
-
+            break
+    uzyte.append(losowe)
     pl = connect.cursor()
     pl.execute(f"SELECT pl FROM trudny WHERE id = {losowe}")
     pl_text = str(pl.fetchone())
@@ -846,7 +867,7 @@ def literki_trudny():
         for x in range(dlugosc_do_nadrobienia):
             podpowiedz = podpowiedz + "_"
     wprowadzony_text.set(podpowiedz)
-    wprowadzona_odpowiedz.place(x=430, y=270)
+    wprowadzona_odpowiedz.place(x=382, y=270)
 
 
 root = tk.Tk()
@@ -855,7 +876,7 @@ root.geometry("900x650")
 root.resizable(False, False)
 
 
-root.configure(background='#8ee000')
+root.configure(background='#89e219')
 
 latwy_guzik1 = tk.StringVar()
 latwy_guzik2 = tk.StringVar()
@@ -899,11 +920,11 @@ bledy_t_var.set("Błędy: 0")
 ogolne_punkty_var.set("Ogolne punkty: 0")
 
 
-elo_label = tk.Label(root, textvariable=elo_var, font=('Aharoni','13','bold'), bg='#7ac70c')
+elo_label = tk.Label(root, textvariable=elo_var, font=('Aharoni','13','bold'), bg='#7CCC18')
 
 
 
-ogolne_punkty_label = tk.Label(root, textvariable=ogolne_punkty_var, bg='#7ac70c', font=('Aharoni', '13', 'bold'))
+ogolne_punkty_label = tk.Label(root, textvariable=ogolne_punkty_var, bg='#7CCC18', font=('Aharoni', '13', 'bold'))
 ogolne_punkty_label.place(x=0, y=0)
 
 PoziomLatwy = tk.Button(root, text="Poziom Łatwy", command=latwy, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#43C000')
