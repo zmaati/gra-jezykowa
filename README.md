@@ -883,6 +883,7 @@ def literki_trudny():
 ```Oprogramowanie``` -> Mateusz Cichosz, Jan Gołębiowski, Krystian Tarnowski;<br>
 ```Wygląd aplikacji``` -> Piotr Kowalewski, Mateusz Cichosz;<br>
 ```Dokumentacja aplikacji``` -> Krystian Tarnowski;
+```Cytaty motywacyjne``` -> Jan Gołębiowski, Piotr Kowalewski;
 <br><br>
 ```Źródła```<br>
 ```Zdjęcia: https://www.google.pl/imghp?hl=pl```
