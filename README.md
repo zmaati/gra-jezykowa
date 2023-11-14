@@ -882,7 +882,7 @@ def literki_trudny():
 ```Baza danych``` -> Mateusz Cichosz, Krystian Tarnowski, Piotr Kowalewski;<br>
 ```Oprogramowanie``` -> Mateusz Cichosz, Jan Gołębiowski, Krystian Tarnowski;<br>
 ```Wygląd aplikacji``` -> Piotr Kowalewski, Mateusz Cichosz;<br>
-```Dokumentacja aplikacji``` -> Krystian Tarnowski;
+```Dokumentacja aplikacji``` -> Krystian Tarnowski;<br>
 ```Cytaty motywacyjne``` -> Jan Gołębiowski, Piotr Kowalewski;
 <br><br>
 ```Źródła```<br>
