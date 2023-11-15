@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import messagebox as msg, Toplevel
 import mysql.connector as baza
 from PIL import ImageTk, Image
-import korwin as korwin
+import cytaty as korwin
 
 HOST = 'localhost'
 USER = 'root'
