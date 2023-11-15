@@ -1,21 +1,23 @@
 import random
 import tkinter as tk
 from tkinter import messagebox as msg, Toplevel
-
 import mysql.connector as baza
 from PIL import ImageTk, Image
+import korwin as korwin
 
-import bazadanych
-
+HOST = 'localhost'
+USER = 'root'
+PASSWORD = ''
+BAZA = 'duolingo'
 
 
 
 
 connect = baza.connect(
-    host=bazadanych.HOST,
-    user=bazadanych.USER,
-    password=bazadanych.PASSWORD,
-    database=bazadanych.BAZA
+    host=HOST,
+    user=USER,
+    password=PASSWORD,
+    database=BAZA
 )
 
 def schowaj_latwy():
@@ -39,6 +41,7 @@ def schowaj_sredni():
     przycisk6_sredni.place_forget()
     przycisk7_sredni.place_forget()
     przycisk8_sredni.place_forget()
+
     start()
 def schowaj_st():
     bledy_st_label.place_forget()
@@ -125,8 +128,6 @@ uzyte = []
 def latwy():
     def usun_uzyte():
         uzyte.clear()
-
-
 
     losowanie()
     zapomnij_guziki()
@@ -229,12 +230,9 @@ def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz):
             elo_label.place_forget()
             print(elo)
             schowaj_latwy()
-            info = msg.showinfo("Koniec", f"Udało ci się ukonczyć ten test ze wszystkimi punktami ("
-                                          f"{elo}).\nGratulacje!")
+            info = msg.showinfo("Motywacja", "Zdobyłeś maksymalną ilość punktów.\n \n" + korwin.korwin_random() + " - Nieznany myśliciel")
             if info == "ok":
-                bledy = 0
-                elo = 0
-                elo_var.set(elo)
+                if_info_answer_ok()
 
         else:
             bledy_latwe_label.place_forget()
@@ -309,16 +307,12 @@ def sprawdzenie_dobrej_odpowiedzi(wybrana_odpowiedz):
             if elo >= 1:
                 info = msg.showinfo("Koniec", f"Udało ci się zdobyć {elo} punktów przed zrobieniem 5 blędów.\nGratulacje!")
                 if info == "ok":
-                    bledy = 0
-                    elo = 0
-                    elo_var.set(elo)
+                    if_info_answer_ok()
             else:
                 info = msg.showinfo("Koniec",
                                     f"Niestety nie udało ci się zdobyć żadnych punktów")
                 if info == "ok":
-                    bledy = 0
-                    elo = 0
-                    elo_var.set(elo)
+                    if_info_answer_ok()
 
 
 def sredni():
@@ -481,12 +475,9 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             elo_label.place_forget()
             print(elo)
             schowaj_sredni()
-            info = msg.showinfo("Koniec", f"Udało ci się ukonczyć ten test ze wszystkimi punktami ("
-                                          f"{elo}).\nGratulacje!")
+            info = msg.showinfo("Motywacja", "Zdobyłeś maksymalną ilość punktów.\n \n" + korwin.korwin_random() + " - Nieznany myśliciel")
             if info == "ok":
-                bledy = 0
-                elo = 0
-                elo_var.set(elo)
+                if_info_answer_ok()
         else:
             bledy_srednie_label.place_forget()
             odp_label.place_forget()
@@ -500,6 +491,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             przycisk8_sredni.place_forget()
             sredni()
     else:
+        global ashowinfo
         if wybrana_odpowiedz == odp_a_sprawdzenie:
             top = Toplevel()
             top.title(odp_a_sredni_strip)
@@ -539,7 +531,7 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             ashowinfo.image = a1
             ashowinfo.grid(row=0, column=0)
             przycisk4_sredni.config(state="disabled")
-
+            top.deiconify()
         elif wybrana_odpowiedz == odp_e_sprawdzenie:
             top = Toplevel()
             top.title(odp_e_sredni_strip)
@@ -579,22 +571,33 @@ def sprawdzenie_dobrej_odpowiedzi_sredni(wybrana_odpowiedz, przycisk):
             przycisk8_sredni.config(state="disabled")
         dodawanie_bledow(bledy_s_var)
         if bledy > 4:
+            tope = Toplevel()
+            e = Image.open(f"emojisad/emojisad1.gif")
+            e1 = ImageTk.PhotoImage(e)
+            eshowinfo = tk.Label(tope, image=e1, width=400, height=400)
+            eshowinfo.image = e1
+            eshowinfo.grid(row=0, column=0)            
             elo_label.place_forget()
             print(elo)
             schowaj_sredni()
             if elo >= 1:
+               
+                elo_label.place_forget()
                 info = msg.showinfo("Koniec", f"Udało ci się zdobyć {elo} punktów przed zrobieniem 5 blędów.\nGratulacje!")
+                
                 if info == "ok":
-                    bledy = 0
-                    elo = 0
-                    elo_var.set(elo)
+                    if_info_answer_ok()
             else:
                 info = msg.showinfo("Koniec",
                                     f"Niestety nie udało ci się zdobyć żadnych punktów")
+                topr = Toplevel()
+                r = Image.open(f"emojigood/emoji1.gif")
+                r1 = ImageTk.PhotoImage(r)
+                rshowinfo = tk.Label(topr, image=r1, width=400, height=400)
+                rshowinfo.image = r1
+                rshowinfo.grid(row=0, column=0)            
                 if info == "ok":
-                    bledy = 0
-                    elo = 0
-                    elo_var.set(elo)
+                    if_info_answer_ok()
 
 def srednio_trudny():
     global polskie_slowo_strip, ang_slowo_strip, samogloska_strip, samo, polskie, angielskie, dobre_samo_tekst, \
@@ -674,7 +677,11 @@ def if_info_answer_ok():
     zle.clear()
     dobre_samo_var.set("")
     zle_samo_var.set("")
+    bledy_l_var.set("Błędy: "+str(bledy))
     bledy_st_var.set("Błędy: "+str(bledy))
+    bledy_s_var.set("Błędy: "+str(bledy))
+    bledy_t_var.set("Błędy: "+str(bledy))
+
 
 dobre = []
 zle = []
@@ -694,8 +701,8 @@ def sprawdzanie_srednio_trudne():
                 elo_label.place_forget()
                 print(elo)
                 schowaj_st()
-                info = msg.showinfo("Koniec", f"Udało ci się ukonczyć ten test ze wszystkimi punktami ("
-                                              f"{elo}).\nGratulacje!")
+
+                info = msg.showinfo("Motywacja", "Zdobyłeś maksymalną ilość punktów.\n \n" + korwin.korwin_random() + " - Nieznany myśliciel")
                 if info == "ok":
                     if_info_answer_ok()
             else:
@@ -805,13 +812,9 @@ def sprawdz_trudny():
             elo_label.place_forget()
             print(elo)
             schowaj_trudne()
-            info = msg.showinfo("Koniec", f"Udało ci się ukonczyć ten test ze wszystkimi punktami ("
-                                          f"{elo}).\nGratulacje!")
+            info = msg.showinfo("Motywacja", "Zdobyłeś maksymalną ilość punktów.\n \n" + korwin.korwin_random() + " - Nieznany myśliciel")
             if info == "ok":
-                bledy = 0
-                elo = 0
-                elo_var.set(elo)
-                uzyte.clear()
+                if_info_answer_ok()
         else:
             print("Poprawna odpowiedz!")
             bledy_trudne_label.place_forget()
@@ -830,16 +833,12 @@ def sprawdz_trudny():
             if elo >= 1:
                 info = msg.showinfo("Koniec", f"Udało ci się zdobyć {elo} punktów przed zrobieniem 5 blędów.\nGratulacje!")
                 if info == "ok":
-                    bledy = 0
-                    elo = 0
-                    elo_var.set(elo)
+                    if_info_answer_ok()
             else:
                 info = msg.showinfo("Koniec",
                                     f"Niestety nie udało ci się zdobyć żadnych punktów")
                 if info == "ok":
-                    bledy = 0
-                    elo = 0
-                    elo_var.set(elo)
+                    if_info_answer_ok()
 
     # wprowadzona_odpowiedz.place()
 
@@ -934,10 +933,10 @@ PoziomSredni = tk.Button(root, text="Poziom Średni", command=sredni, height=3, 
 PoziomSredni.grid(row=1, column=2)
 
 PoziomSredniotrudny = tk.Button(root, text="Poziom Średnio-trudny", command=srednio_trudny, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#43C000')
-PoziomSredniotrudny.grid(row=2, column=2)
+PoziomSredniotrudny.grid(row=2, column=1)
 
 PoziomTrudny = tk.Button(root, text="Poziom Trudny", command=trudny, height=3, width=20, font=('Aharoni', '14', 'bold'), bg='#43C000')
-PoziomTrudny.grid(row=2, column=1)
+PoziomTrudny.grid(row=2, column=2)
 
 
 
