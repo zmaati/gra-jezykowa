@@ -887,3 +887,4 @@ def literki_trudny():
 <br><br>
 ```Źródła```<br>
 ```Zdjęcia: https://www.google.pl/imghp?hl=pl```
+```Cytaty: https://github.com/Encryptize/korwin.py```
